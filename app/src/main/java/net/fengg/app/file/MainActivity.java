@@ -27,6 +27,12 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        tb_server.setChecked(true);
+    }
+
+    @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         if(isChecked) {
             String ip = SimpleWebServer.getIp();
